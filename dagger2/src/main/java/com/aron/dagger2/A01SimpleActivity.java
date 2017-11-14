@@ -37,6 +37,9 @@ public class A01SimpleActivity extends AppCompatActivity {
 //                .build()
 //                .inject(this);
 
+        /**
+         * 如果DaggerA01SimpleComponent类不能正确索引，Ctrl + F9 编译一下
+         */
         DaggerA01SimpleComponent.builder()
                 .a01SimpleModule(new A01SimpleModule(this))
                 .build()
@@ -46,5 +49,6 @@ public class A01SimpleActivity extends AppCompatActivity {
     @OnClick(R.id.btn_click)
     public void onViewClicked() {
         Toast.makeText(this, student.toString(), Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(A01SimpleActivity.this,A02SimpleActivity.class));
     }
 }
